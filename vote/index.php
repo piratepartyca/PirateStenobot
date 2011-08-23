@@ -23,8 +23,8 @@ if ($_POST) {
 	else
 		$pin = sha1($_POST['pin']);
 	
-	$valid = ('TRUE' == file_get_contents("https://crm.piratepartyofcanada.com/verify.php?password=awefoiweaf8032ur3jrkffkj834tru3428fjer%5B8fj345rj4280f34jf34jtr-42ufjwpe%5Dcv,m&id=$uid&pin=$pin"));
-	
+	$valid = true;
+
 	if ($valid) {
 		if (isset($_POST['vote']))
 			page('record');
