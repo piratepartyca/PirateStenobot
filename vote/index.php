@@ -23,7 +23,8 @@ if ($_POST) {
 	else
 		$pin = sha1($_POST['pin']);
 	
-	$valid = true;
+	// function is in config.php since it will have to be customized to particular implementations
+	$valid = authenticate($_POST['uid'], $pin);
 
 	if ($valid) {
 		if (isset($_POST['vote']))

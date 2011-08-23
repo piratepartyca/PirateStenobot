@@ -6,7 +6,8 @@ if ($_POST) {
 	$uid = intval($_POST['uid']);
 	$pin = intval($_POST['pin']);
 	
-	$valid = true;
+	// function is in config.php since it will have to be customized to particular implementations
+	$valid = authenticate($_POST['uid'], sha1($_POST['pin']));
 
 	if ($valid) {
 		$res = mysql_query("SELECT password, passkey FROM users WHERE uid = $uid");

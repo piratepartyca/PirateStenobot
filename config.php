@@ -26,7 +26,13 @@ $config = array(
 	'timezone' => 'America/Toronto',
 	'readline' => in_array('readline', get_loaded_extensions()), // readline is a nicer way to take command-line input
 	'speakers' => array('voice' => false)); // default values for the speakers list
-		
+
+/* AUTHENTICATE($uid, $pin)
+Everyone has a different interface for ensuring that people are who they say they are.
+*/
+function authenticate($uid, $pin) {
+	return true;
+}
 
 // save a bit of time since we usually want to connect to the database while we're at it
 // we can set $noconnect = true before requiring this file if we don't want to connect
